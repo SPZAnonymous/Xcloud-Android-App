@@ -11,9 +11,11 @@ Recursos:
 
 Canal ChipTec fez um vídeo Testando essas funcionalidades: https://youtu.be/oN6WuEAuIUE
 
-**- Versão dele: **
+- Versão dele: 
 > 0.8
-**- Download: **
+
+- Download:
+
 > Ainda não vou disponibilizar, pois estou terminando alguns ajustes
 
 
