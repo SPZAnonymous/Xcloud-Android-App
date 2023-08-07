@@ -15,4 +15,4 @@ Canal ChipTec fez um vídeo Testando essas funcionalidades: https://youtu.be/oN6
 
 Recursos:
 
-![image](https://github.com/SPZAnonymous/Xcloud-Android-App/assets/74514945/c1708b16-9fa9-4d0e-89e5-41f73b8579fe)
+![image](https://github.com/SPZAnonymous/Xcloud-Android-App/assets/74514945/9035a04b-b2fd-488a-9af6-62659a782d3e)
