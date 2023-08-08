@@ -16,3 +16,8 @@ Canal ChipTec fez um vídeo Testando essas funcionalidades: https://youtu.be/oN6
 Recursos:
 
 ![image](https://github.com/SPZAnonymous/Xcloud-Android-App/assets/74514945/9035a04b-b2fd-488a-9af6-62659a782d3e)
+
+Essa parte de inserir botões foi insipirado no modo de inserir botões do código do Better-Xcloud que foi modificado para colocar os botões de tela cheia e também inseir o código do Clarity Boost:
+https://github.com/redphx/better-xcloud/tree/main
+
+Que é um recurso muito útil para navegadores do computador, que mostra status e etc.
