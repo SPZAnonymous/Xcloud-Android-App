@@ -5,7 +5,7 @@ Este aplicativo permite que você jogue seus jogos do Xbox Game Pass em celulare
 Este aplicativo está em desenvolvimento e pode apresentar alguns bugs e problemas de desempenho. Estamos trabalhando para corrigi-los e adicionar novas funcionalidades, como o suporte a toque para todos os jogos.
 
 - Versão:
-> 0.8
+> 1.0
 
 - Download:
 > Ainda não vai ter download, estou melhorando interface.
