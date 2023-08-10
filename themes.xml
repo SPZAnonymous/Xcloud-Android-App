@@ -1,0 +1,7 @@
+<resources>
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowBackground">@color/cor_tela_webview</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:forceDarkAllowed">false</item>
+    </style>
+</resources>

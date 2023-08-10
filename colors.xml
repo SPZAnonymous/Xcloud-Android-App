@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="white">#FFFFFF</color>
+    <color name="colorCapaBackground">#FFFF00</color> 
+    <color name="cor_tela_webview">#04AB4C</color>
+</resources>
