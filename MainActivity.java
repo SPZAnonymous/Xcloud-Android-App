@@ -115,11 +115,10 @@ public class MainActivity extends AppCompatActivity {
                if (url.contains("/play/launch")) {
                    injectJavaScript(getUpdateButtonScript());
                    injectJavaScript(getUpdateButtonScript2());
-                   injectJavaScript(aplicarReso());
+                   
                } else {
                    injectJavaScript(removefooter());
-                   injectJavaScript(ResolucaoBotao());    
-                     injectJavaScript(aplicarReso());       
+                   
                }
                     
                hideSystemUi();
@@ -147,7 +146,7 @@ public class MainActivity extends AppCompatActivity {
                if (url.contains("/play/launch")) {
                    injectJavaScript(getUpdateButtonScript());
                    injectJavaScript(getUpdateButtonScript2());
-                   injectJavaScript(aplicarReso());     
+                    
                    setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
                } else {
                    setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED);
@@ -164,6 +163,7 @@ public class MainActivity extends AppCompatActivity {
         webSettings.setDomStorageEnabled(true);
         webSettings.setEnableSmoothTransition(true);
         webSettings.setLoadsImagesAutomatically(true);
+        webSettings.setUserAgentString("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36 Edg/115.0.1901.203");
         if (hasHardwareAcceleration()) {
             webSettings.setRenderPriority(WebSettings.RenderPriority.HIGH);
             webSettings.setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);
@@ -405,122 +405,5 @@ public class MainActivity extends AppCompatActivity {
             "}\n" +
              "function callInject(count) { if (count > 0) { botoes(); setTimeout(function() { callInject(count - 1); }, 2000); } } callInject(3);";
     }
-    
-    private String ResolucaoBotao() {
-     return "function botoes() {\n" +
-            "  let clonedButton;\n" +
-            "  const observer = new MutationObserver(mutationList1 => {\n" +
-            "    mutationList1.forEach(item => {\n" +
-"      if (item.type !== 'childList') {\n" +
-"        return;\n" +
-"      }\n" +
-"      item.addedNodes.forEach(node => {\n" +
-"        const audioVideo = document.querySelector(\"#settings-AudioAndVideo\");\n" +
-"        if (audioVideo) {\n" +
-"          audioVideo.addEventListener(\"click\", () => {\n" +
-"        \n" +
-"            if (!clonedButton) {\n" +
-"              const originalButton = node.querySelector(\"div > div.TabContent-module__container___WzjH1 > div > div.TabContent-module__scrollable___fqofz > div > button\");\n" +
-"              if (originalButton) {\n" +
-"                clonedButton = originalButton.cloneNode(true);\n" +
-"                clonedButton.textContent = \"Habilitar resolução 1080p para jogos\";\n" +
-"                clonedButton.setAttribute('aria-checked', 'false');\n" +
-"                const initialState = localStorage.getItem('1080pRe');\n" +
-"                clonedButton.addEventListener('click', e => {\n" +
-"                  const currentState = clonedButton.getAttribute('aria-checked');\n" +
-"                  const habi = currentState === 'true' ? 'false' : 'true';\n" +
-"                  localStorage.setItem('1080pRe', habi);\n" +
-"                  if (habi === 'true') {\n" +
-"                    clonedButton.setAttribute('aria-checked', 'true');\n" +
-"                    const area = clonedButton.querySelector(\"div > button > div\");\n" +
-"                    const bolinha = clonedButton.querySelector(\"div > button > div > div\");\n" +
-"                    bolinha.style.transform = 'translateX(calc(var(--gds-switch-width) - var(--gds-switch-thumbSize) - var(--gds-switch-height) + var(--gds-switch-thumbSize)))';\n" +
-"                    area.style.backgroundColor = '#008746';\n" +
-"                    area.style.boxShadow = 'unset';\n" +
-"                    localStorage.setItem('1080pRe', 'true');\n" +
-"                  } else {\n" +
-"                    clonedButton.setAttribute('aria-checked', 'false');\n" +
-"                    const area = clonedButton.querySelector(\"div > button > div\");\n" +
-"                    const bolinha = clonedButton.querySelector(\"div > button > div > div\");\n" +
-"                    bolinha.style.transform = 'translateX(0)';\n" +
-"                    area.style.backgroundColor = '#2d3036';\n" +
-"                    area.style.boxShadow = 'inset 0 0 0 2px var(--gds-switch-activeThumbColor)';\n" +
-"                    localStorage.setItem('1080pRe', 'false');\n" +
-"                  }\n" +
-"                })\n" +
-"                const inter = document.querySelector(\"div > div.TabContent-module__container___WzjH1 > div > div.TabContent-module__scrollable___fqofz > div > button > div\");\n"+
-"                if (inter) {\n"+
-"                  const clonedInter = inter.cloneNode(true);\n"+
-"                  clonedButton.appendChild(clonedInter);\n"+
-"                  if (initialState === null) {\n"+
-"                    localStorage.setItem('1080pRe', 'false');\n"+
-"                  }\n"+
-"                  if (initialState === 'true') {\n"+
-"                    clonedButton.setAttribute('aria-checked', 'true');\n"+
-"                    const bolinha = clonedInter.querySelector(\"div > div\");\n"+
-"                    bolinha.style.transform = 'translateX(calc(var(--gds-switch-width) - var(--gds-switch-thumbSize) - var(--gds-switch-height) + var(--gds-switch-thumbSize)))';\n"+
-"                    clonedInter.style.backgroundColor = '#008746';\n"+
-"                    clonedInter.style.boxShadow = 'unset';\n"+
-"                  } else {\n"+
-"                    clonedButton.setAttribute('aria-checked', 'false');  \n"+
-"                    const bolinha = clonedInter.querySelector(\"div > div\");\n"+
-"                    bolinha.style.transform = 'translateX(0)';\n"+
-"                    clonedInter.style.backgroundColor = '#2d3036';\n"+
-"                    clonedInter.style.boxShadow = 'inset 0 0 0 2px var(--gds-switch-activeThumbColor)';\n"+
-"                  }\n"+
-"                 \n"+
-"                originalButton.parentNode.insertBefore(clonedButton, originalButton.nextSibling);\n"+
-"                }\n"+
-"              }\n" +
-"            }\n" +
-"          });\n" +
-"        }\n" +
-"      });\n" +
-"    });\n" +
-"    if (clonedButton && !document.querySelector(\"#settings-AudioAndVideo\")) {\n" +
-"      clonedButton.remove();\n" +
-"      clonedButton = null;\n" +
-"    }\n" +
-"  });\n" +
-"  observer.observe(document.body, { childList: true, subtree: true });\n" +
-"\n" +
-"  [\"#settings-SafetyAndPrivacy\", \"#settings-Account\", \"#settings-Accessibility\"].forEach(selector => {\n" +
-"    document.addEventListener(\"click\", event => {\n" +
-"      if (event.target.closest(selector)) {\n" +
-"        if (clonedButton) {\n" +
-"          clonedButton.remove();\n" +
-"          clonedButton = null;\n" +
-"        }\n" +
-"      }\n" +
-"    });\n" +
-"  });\n" +
-"}\n" +
-"botoes();";
-    }
-        
-    private String aplicarReso() {
-        return "const orgFetch = window.fetch;\n" +
-"window.fetch = async (...arg) => {\n" +
-"    const request = arg[0];\n" +
-"    const url = (typeof request === 'string') ? request : request.url;\n" +
-"    if (url.endsWith('/sessions/cloud/play')) {\n" +
-"        const clone = request.clone();\n" +
-"        const body = await clone.json();\n" +
-"        const localStorageValue = localStorage.getItem('1080pRe');\n" +
-"        const shouldUse1080p = localStorageValue === 'true';\n" +
-"        if (!shouldUse1080p) {\n" +
-"            body.settings.osName = 'android';\n" +
-"        } else {\n" +
-"            body.settings.osName = 'windows';\n" +
-"        }\n" +
-"        const newRequest = new Request(request, {\n" +
-"            body: JSON.stringify(body),\n" +
-"        });\n" +
-"        arg[0] = newRequest;\n" +
-"        return orgFetch(...arg);\n" +
-"    }\n" +
-"    return orgFetch(...arg);\n" +
-"};";
-    }
-    
+      
 }
